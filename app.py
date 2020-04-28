@@ -14,7 +14,7 @@ from Resources.store import Store, StoreList
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' #It means that the sqlalchemy database is going to live at the root folder of our project.
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ('DATABASE_URL','sqlite:///data.db') #It means that the sqlalchemy database is going to live at the root folder of our project.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose'
